@@ -52,7 +52,7 @@ namespace API.Controllers
         public async Task<ActionResult<AppUser>> Login(LoginDto loginDto)
         {
             // Searches for username in database
-            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName == loginDto.UserName);
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.UserName == loginDto.UserName.ToLower());
 
             if (user == null)
             {
