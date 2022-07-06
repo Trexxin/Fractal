@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,11 +20,13 @@ namespace API.Controllers
 
         // Endpoint to get all users in database
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() 
         {
             return await _context.Users.ToListAsync();
         }
 
+        [Authorize]
         // Endpoint to get an individual user by their id
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUsers(int id) 
