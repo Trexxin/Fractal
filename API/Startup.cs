@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API.Data;
+using API.Interfaces;
+using API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +34,7 @@ namespace API
             services.AddDbContext<DataContext>(options => {
                 options.UseSqlite(_config.GetConnectionString("DefaultConnection"));
             });
+            services.AddScoped<ITokenService, TokenService>();
             services.AddControllers();
             services.AddCors();
             services.AddSwaggerGen(c =>
