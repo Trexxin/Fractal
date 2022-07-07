@@ -12,9 +12,6 @@
 As of 7/7/2022 the app is not in a demoable state. 
 
 
-
-## [Usage](https://iharsh234.github.io/WebApp/) 
-
 ### Development
 Want to contribute? Great!
 
