@@ -8,8 +8,9 @@
 </table>
 
 
-## Demo
-As of 7/7/2022 the app is not in a demoable state. 
+## Work In Progress Preview
+
+[Fractal Wip Preview.webm](https://user-images.githubusercontent.com/52933202/177888442-743be82e-ff73-4dd4-8cc3-4958914c70b0.webm)
 
 
 ### Development
