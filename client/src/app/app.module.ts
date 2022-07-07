@@ -14,6 +14,7 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { BrowseComponent } from './browse/browse.component';
 import { MessagesComponent } from './messages/messages.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,10 @@ import { MessagesComponent } from './messages/messages.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    })
   ],
   providers: [{ provide: BsDropdownConfig, useValue: { isAnimated: true, autoClose: true } }],
   bootstrap: [AppComponent]
