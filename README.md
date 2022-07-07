@@ -45,16 +45,29 @@ If you'd like to request a new feature, feel free to do so by opening an issue [
 
 ## To-do
 Implement a customizable UI
+
 Adding Photo Upload functionality as well as a cool looking gallery in Angular
+
 Angular Template forms and Reactive forms and validation
+
 Paging, Sorting and Filtering
+
 Implement the capacity to search for people nearby
+
 The ability to flag/report users
+
 Create a Premium or paid membership
+
 Social Login, forgot password, and email
+
 A Payment gateway
+
 Multiple Forms for additional information
+
 Make the app responsive for mobile viewports
+
 Adding a Private Messaging system to the app
+
 Publishing the application to Microsoft Azure
+
 Using SignalR for real time presence and live messaging between users
