@@ -15,6 +15,7 @@ import { MemberDetailComponent } from './members/member-detail/member-detail.com
 import { BrowseComponent } from './browse/browse.component';
 import { MessagesComponent } from './messages/messages.component';
 import { ToastrModule } from 'ngx-toastr';
+import { SharedModule } from './modules/shared.module';
 
 @NgModule({
   declarations: [
@@ -33,10 +34,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot(),
-    ToastrModule.forRoot({
-      positionClass: 'toast-bottom-right'
-    })
+    SharedModule
   ],
   providers: [{ provide: BsDropdownConfig, useValue: { isAnimated: true, autoClose: true } }],
   bootstrap: [AppComponent]
