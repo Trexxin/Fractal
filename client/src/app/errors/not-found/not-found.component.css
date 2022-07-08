@@ -1,0 +1,13 @@
+.container {
+    text-align: center;
+    margin-top:8%;
+}
+
+img {
+    max-width: 50%;
+    height: auto;
+}
+
+.btn {
+    margin-top: 1%;
+}
