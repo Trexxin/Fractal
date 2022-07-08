@@ -2,7 +2,7 @@
 <table>
 <tr>
 <td>
-  A webapp using a custom built api to provide functionaility for a small scale dating website.
+  A webapp using a custom built api to provide functionality for a small scale dating website.
 </td>
 </tr>
 </table>
