@@ -1,3 +1,5 @@
+using API.Extensions;
+
 namespace API.Entities
 {
     public class AppUser
@@ -16,5 +18,10 @@ namespace API.Entities
         public string Interests {get; set; }
         public string City { get; set; }
         public ICollection<Photo> Photos { get; set; }
+        // Returns age of the user based on their date of birth from an extension method
+        public int GetAge()
+        {
+            return DateOfBirth.CalculateAge();
+        }
     }
 }
