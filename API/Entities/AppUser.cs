@@ -17,6 +17,7 @@ namespace API.Entities
         public string LookingFor { get; set; }
         public string Interests {get; set; }
         public string City { get; set; }
+        // One to many relationship i.e one user can have multible photos
         public ICollection<Photo> Photos { get; set; }
         // Returns age of the user based on their date of birth from an extension method
         public int GetAge()
