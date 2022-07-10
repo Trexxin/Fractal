@@ -10,7 +10,7 @@ import { User } from '../models/user';
 })
 export class AccountService {
  // Service to make requests to API
-  baseUrl = environment;
+  baseUrl = environment.apiUrl;
   private currentUserSource = new ReplaySubject<User>(1);
   currentUser$ = this.currentUserSource.asObservable();
 
