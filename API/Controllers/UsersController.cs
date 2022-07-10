@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace API.Controllers
 {
+    // Protects methods with authorization
+    [Authorize]
     public class UsersController : BaseApiController
     {
         private readonly DataContext _context;
@@ -20,13 +22,11 @@ namespace API.Controllers
 
         // Endpoint to get all users in database
         [HttpGet]
-        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<AppUser>>> GetUsers() 
         {
             return await _context.Users.ToListAsync();
         }
 
-        [Authorize]
         // Endpoint to get an individual user by their id
         [HttpGet("{id}")]
         public async Task<ActionResult<AppUser>> GetUsers(int id) 

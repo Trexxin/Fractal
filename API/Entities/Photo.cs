@@ -8,7 +8,7 @@ namespace API.Entities
     {
         public int Id { get; set; }
         public string Url { get; set; }
-        public bool isMain { get; set; }
+        public bool IsMain { get; set; }
         public string PulbicId { get; set; }
         // Fully defining the relationship with AppUser
         public AppUser AppUser { get; set; }
