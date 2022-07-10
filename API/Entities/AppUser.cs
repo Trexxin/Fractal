@@ -21,9 +21,9 @@ namespace API.Entities
         public ICollection<Photo> Photos { get; set; }
         // Returns age of the user based on their date of birth from an extension method
         // Will populate the variable "Age" inside of the MemberDto because of AutoMapper
-        public int GetAge()
-        {
-            return DateOfBirth.CalculateAge();
-        }
+        // public int GetAge()
+        // {
+        //     return DateOfBirth.CalculateAge();
+        // }
     }
 }
