@@ -11,6 +11,8 @@ namespace API.Dtos
         // Primary key
         public int Id { get; set; }
         public string UserName { get; set; }
+        // Property for the main photo that the user will specify
+        public string PhotoUrl { get; set; }
         public int Age { get; set; }
         public string KnownAs { get; set; }
         public DateTime Registered { get; set; }
