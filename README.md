@@ -10,7 +10,8 @@
 
 ## Work In Progress Preview
 
-[Fractal Wip Preview.webm](https://user-images.githubusercontent.com/52933202/177888442-743be82e-ff73-4dd4-8cc3-4958914c70b0.webm)
+[Fractal_WIP_7-11-2022.webm](https://user-images.githubusercontent.com/52933202/178354001-ea1d9882-15b5-47e7-9b81-b938a36daae1.webm)
+
 
 
 ### Development
