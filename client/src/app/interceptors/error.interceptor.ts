@@ -32,6 +32,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                   if (error.error.errors[key]) 
                     // Flattans the array of errors from error responses and pushes them into the modlaStateErrors array
                     modalStateErrors.push(error.error.errors[key])
+                    this.toastr.error(error.statusText === "OK" ? "Password must be between 4 and 8 charecters long" : error.statusText, error.status);
                 }
                 throw modalStateErrors.flat();
               } else {
