@@ -5,6 +5,7 @@
 .card {
     background-color: #00171F;
 }
+
 .img-thumbnail {
     margin: 25px;
     width: 85%;
@@ -20,3 +21,16 @@
     border-top: none;
 }
 
+.ngx-gallery {
+    display: inline-block;
+    margin-bottom: 20px;
+    border: white;
+}
+
+::ng-deep.ngx-gallery-thumbnails .ngx-gallery-thumbnail {
+    border: none !important;
+}
+
+::ng-deep.ngx-gallery-thumbnails .ngx-gallery-thumbnail.ngx-gallery-active {
+    border: 1px solid #2A9FD6 !important;
+}
