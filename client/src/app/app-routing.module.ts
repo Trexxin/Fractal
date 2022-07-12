@@ -7,6 +7,7 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
 import { AuthGuard } from './guards/auth.guard';
 import { HomeComponent } from './home/home.component';
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
 import { MessagesComponent } from './messages/messages.component';
 
@@ -19,6 +20,7 @@ const routes: Routes = [
     children: [
       {path: 'members', component: MemberListComponent},
       {path: 'members/:username', component: MemberDetailComponent},
+      {path: 'member/edit', component: MemberEditComponent},
       {path: 'browse', component: BrowseComponent},
       {path: 'messages', component: MessagesComponent},
     ]
