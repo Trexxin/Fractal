@@ -19,6 +19,7 @@ namespace API.Helpers
                 // Calculates the age of the user by their date of birth
                 .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
             CreateMap<Photo, PhotoDto>();
+            CreateMap<ProfileUpdateDto, AppUser>();
         }
     }
 }
