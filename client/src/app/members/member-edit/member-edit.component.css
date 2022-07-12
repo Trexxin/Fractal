@@ -2,6 +2,9 @@
     margin-top: 7%;
 }
 
+.card {
+    background-color: #00171F;
+}
 .img-thumbnail {
     margin: 25px;
     width: 85%;
@@ -17,3 +20,23 @@
     border-top: none;
 }
 
+.form-control {
+    background-color: #00171F;
+}
+
+.alert {
+    text-align: center;
+    vertical-align: middle;
+    background-color: #003459;
+}
+
+.alert p {
+    margin-bottom: 0%;
+}
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}

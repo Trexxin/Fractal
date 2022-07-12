@@ -4,14 +4,13 @@
             <h2>Your profile</h2>
         </div>
         <div class="col-8">
-            <div class="alert alert-info">
-                <p><strong>Information: </strong> You have made changes. Any unsaved changes will be lost.</p>
+            <div class="alert alert-success">
+                <span><p><strong>Information: </strong> You have made changes. Any unsaved changes will be lost.</p></span>
             </div>
         </div>
         <div class="col-4">
             <div class="card border-primary border-3">
-                <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}"
-                    class="card-img-top img-thumbnail">
+                <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}" class="card-img-top img-thumbnail">
                 <div class="card-body">
                     <div>
                         <strong>Location:</strong>
@@ -31,7 +30,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-outline-success btn-block">Save Changes</button>
+                    <button class="btn btn-outline-primary btn-block">Save Changes</button>
                 </div>
             </div>
         </div>
@@ -40,17 +39,17 @@
                 <tab heading="About {{member.knownAs}}">
                     <form >
                         <h4>Bio</h4>
-                        <textarea class="form-control bg-black text-white border border-primary" [(ngModel)]="member.introduction" name="introduction" rows="6"></textarea>
+                        <textarea class="form-control text-white border border-primary" [(ngModel)]="member.introduction" name="introduction" rows="6"></textarea>
                         <h4 class="mt-2">Looking for</h4>
-                        <textarea class="form-control bg-black text-white border border-primary" [(ngModel)]="member.lookingFor" name="lookingFor" rows="6"></textarea>
+                        <textarea class="form-control text-white border border-primary" [(ngModel)]="member.lookingFor" name="lookingFor" rows="6"></textarea>
                         <h4 class="mt-2">Interests</h4>
-                        <textarea class="form-control bg-black text-white border border-primary" [(ngModel)]="member.interests" name="interests" rows="6"></textarea>
+                        <textarea class="form-control text-white border border-primary" [(ngModel)]="member.interests" name="interests" rows="6"></textarea>
                         <h4 class="mt-2">Location: </h4>
                         <div class="form-inline ">
                             <label for="city">City: </label>
-                            <input [(ngModel)]="member.city" type="text" name="city" class="form-control bg-black text-white border border-primary mx-2">
+                            <input [(ngModel)]="member.city" type="text" name="city" class="form-control text-white border border-primary mx-2">
                             <label for="country">Country: </label>
-                            <input [(ngModel)]="member.country" type="text" name="country" class="form-control bg-black text-white border border-primary mx-2">
+                            <input [(ngModel)]="member.country" type="text" name="country" class="form-control text-white border border-primary mx-2">
                         </div>
                     </form>
                 </tab>

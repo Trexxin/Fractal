@@ -2,6 +2,9 @@
     margin-top: 10%;
 }
 
+.card {
+    background-color: #00171F;
+}
 .img-thumbnail {
     margin: 25px;
     width: 85%;
