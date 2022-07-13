@@ -15,6 +15,8 @@ namespace API.Extensions
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration config) 
         {
+            // Strongly typed configuration settings for Cloudinary 
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             // Connects database to application
             services.AddDbContext<DataContext>(options => {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
