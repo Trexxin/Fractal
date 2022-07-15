@@ -8,6 +8,7 @@ using API.Data;
 using API.Dtos;
 using API.Entities;
 using API.Interfaces;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,15 +18,17 @@ namespace API.Controllers
     {
         private readonly DataContext _context;
         private readonly ITokenService _tokenService;
-        public AccountController(DataContext context, ITokenService tokenService)
+        private readonly IMapper _mapper;
+        public AccountController(DataContext context, ITokenService tokenService, IMapper mapper)
         {
+            _mapper = mapper;
             _tokenService = tokenService;
             _context = context;
         }
 
         // Post Request to register a new user
         [HttpPost("register")]
-        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto) 
+        public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
         {
             // Checks to see if username has been taken
             if (await UserExists(registerDto.UserName))
@@ -33,24 +36,24 @@ namespace API.Controllers
                 return BadRequest("Username is taken");
             }
 
+            var user = _mapper.Map<AppUser>(registerDto);
+
             using var hmac = new HMACSHA512();
 
-            var user = new AppUser 
-            {
-                UserName = registerDto.UserName.ToLower(),
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                PasswordSalt = hmac.Key
-            };
+            user.UserName = registerDto.UserName.ToLower();
+            user.PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password));
+            user.PasswordSalt = hmac.Key;
 
             // Enables Entity Framework to track new user
             _context.Users.Add(user);
             // Adds new user to the database asynchronously
             await _context.SaveChangesAsync();
 
-            return new UserDto 
+            return new UserDto
             {
                 UserName = user.UserName,
-                Token = _tokenService.CreateToken(user)
+                Token = _tokenService.CreateToken(user),
+                KnownAs = user.KnownAs
             };
         }
 
@@ -60,7 +63,7 @@ namespace API.Controllers
         {
             // Searches for the username and a photo in database
             var user = await _context.Users.Include(p => p.Photos).SingleOrDefaultAsync(u => u.UserName == loginDto.UserName.ToLower());
-            
+
             if (user == null)
             {
                 return Unauthorized("Invalid username");
@@ -79,19 +82,20 @@ namespace API.Controllers
                     return Unauthorized("Invalid Password");
                 }
             }
-            return new UserDto 
+            return new UserDto
             {
                 UserName = user.UserName,
                 Token = _tokenService.CreateToken(user),
-                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url
+                PhotoUrl = user.Photos.FirstOrDefault(x => x.IsMain)?.Url,
+                KnownAs = user.KnownAs
             };
         }
 
         // Ensures each username in the database is unique
-        private async Task<bool> UserExists(string UserName) 
+        private async Task<bool> UserExists(string UserName)
         {
             return await _context.Users.AnyAsync(u => u.UserName == UserName.ToLower());
-            
+
         }
     }
 }
