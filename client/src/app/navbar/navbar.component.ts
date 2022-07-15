@@ -10,6 +10,8 @@ import { AccountService } from '../services/account.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
+
 export class NavbarComponent implements OnInit {
   model: any = {}
 
@@ -35,4 +37,6 @@ export class NavbarComponent implements OnInit {
     // Redirects user to home component upon logout
     this.router.navigateByUrl('/')
   }
+
+  
 }

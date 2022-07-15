@@ -60,7 +60,7 @@ namespace API.Controllers
         {
             // Searches for the username and a photo in database
             var user = await _context.Users.Include(p => p.Photos).SingleOrDefaultAsync(u => u.UserName == loginDto.UserName.ToLower());
-
+            
             if (user == null)
             {
                 return Unauthorized("Invalid username");
