@@ -15,6 +15,7 @@ export class LoadingService {
     this.spinnerService.show(undefined, {
       type: "square-loader",
       bdColor: 'rgba(255,255,255,0)',
+      color: "#2A9FD6"
     });
   }
 
