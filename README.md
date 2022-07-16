@@ -10,7 +10,7 @@
 
 ## Work In Progress Preview
 
-[Fractal_WIP_7-13-2022.webm](https://user-images.githubusercontent.com/52933202/178888838-94da2f6f-6c81-4a8b-9230-910650111f11.webm)
+[Fractal_WIP_7-15-2022.webm](https://user-images.githubusercontent.com/52933202/179327854-9c71b8c5-91de-4a2b-8a57-648b34009ba7.webm)
 
 
 
