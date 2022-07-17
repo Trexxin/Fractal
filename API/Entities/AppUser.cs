@@ -19,14 +19,10 @@ namespace API.Entities
         public string Interests {get; set; }
         public string City { get; set; }
         public string Country { get; set; }
-
         // One to many relationship i.e one user can have multible photos
         public ICollection<Photo> Photos { get; set; }
-        // Returns age of the user based on their date of birth from an extension method
-        // Will populate the variable "Age" inside of the MemberDto because of AutoMapper
-        // public int GetAge()
-        // {
-        //     return DateOfBirth.CalculateAge();
-        // }
+        public ICollection<AppUserLike> LikedByUsers { get; set; }
+        public ICollection<AppUserLike> LikedUsers { get; set; }
+
     }
 }
