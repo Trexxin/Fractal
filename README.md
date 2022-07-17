@@ -51,7 +51,7 @@ Implement a customizable UI
 
 ~~Angular Template forms and Reactive forms and validation~~
 
-Paging, Sorting and Filtering
+~~Paging, Sorting and Filtering~~
 
 Implement the capacity to search for people nearby
 
