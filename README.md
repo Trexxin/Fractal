@@ -10,7 +10,8 @@
 
 ## Work In Progress Preview
 
-[Fractal_WIP_7-15-2022.webm](https://user-images.githubusercontent.com/52933202/179327854-9c71b8c5-91de-4a2b-8a57-648b34009ba7.webm)
+[Fractal_WIP_7-16-2022.webm](https://user-images.githubusercontent.com/52933202/179385049-ffdcb699-3d3e-4a77-a4ff-bee14cf44948.webm)
+
 
 
 
@@ -51,7 +52,7 @@ Implement a customizable UI
 
 ~~Angular Template forms and Reactive forms and validation~~
 
-Paging, Sorting and Filtering
+~~Paging, Sorting and Filtering~~
 
 Implement the capacity to search for people nearby
 
