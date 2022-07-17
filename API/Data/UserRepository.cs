@@ -38,6 +38,13 @@ namespace API.Data
             .Where(u => u.DateOfBirth >= minDob && u.DateOfBirth <= maxDob)
             .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
             .AsNoTracking();
+
+            query = userParams.Orderby switch
+            {
+                "registered" => query.OrderByDescending(u => u.Registered),
+                _ => query.OrderByDescending(u => u.LastActive)
+            };
+
             // Method to paginate the GetMembers method
             return await PagedList<MemberDto>.CreateAsync(query, userParams.PageNumber, userParams.PageSize);
         }
