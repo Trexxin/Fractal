@@ -47,9 +47,9 @@ If you'd like to request a new feature, feel free to do so by opening an issue [
 ## To-do
 Implement a customizable UI
 
-Adding Photo Upload functionality as well as a cool looking gallery in Angular
+~~Adding Photo Upload functionality as well as a cool looking gallery in Angular~~
 
-Angular Template forms and Reactive forms and validation
+~~Angular Template forms and Reactive forms and validation~~
 
 Paging, Sorting and Filtering
 
@@ -63,7 +63,7 @@ Social Login, forgot password, and email
 
 A Payment gateway
 
-Multiple Forms for additional information
+~~Multiple Forms for additional information~~
 
 Make the app responsive for mobile viewports
 
