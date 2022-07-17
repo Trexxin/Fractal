@@ -14,6 +14,7 @@ import { UserParams } from '../models/userParams';
 export class MembersService {
   baseUrl = environment.apiUrl;
   members: Member[] = [];
+  memberCache = new Map();
 
   constructor(private http: HttpClient) { }
 
@@ -26,8 +27,14 @@ export class MembersService {
   }
 
   getMember(userName: string) {
-    const member = this.members.find(x => x.userName === userName);
-    if (member !== undefined) return of(member)
+    // Flattens the memberCache
+    const member = [...this.memberCache.values()]
+      .reduce((arr, elem) => arr.concat(elem.result), [])
+      .find((member: Member) => member.userName === userName);
+
+    if (member) {
+      return of(member);
+    }
     return this.http.get<Member>(this.baseUrl + 'users/' + userName);
   }
 
@@ -49,6 +56,11 @@ export class MembersService {
   }
 
   getMembers(UserParams: UserParams) {
+    var response = this.memberCache.get(Object.values(UserParams).join('-'));
+    if (response) {
+      return of(response);
+    }
+
     let params = this.getPaginationHeaders(UserParams.pageNumber, UserParams.pageSize);
 
     params = params.append('minAge', UserParams.minAge.toString())
@@ -56,7 +68,12 @@ export class MembersService {
     params = params.append('gender', UserParams.gender)
     params = params.append('orderBy', UserParams.orderBy)
     // if (this.members.length > 0) return of(this.members);
-    return this.getPaginatedResult<Member[]>(this.baseUrl + 'users', params);
+    return this.getPaginatedResult<Member[]>(this.baseUrl + 'users', params)
+      .pipe(map(response => {
+        // Simply retrieves the response from the cache if avaiable
+        this.memberCache.set(Object.values(UserParams).join('-'), response);
+        return response;
+      }))
   }
 
   private getPaginatedResult<T>(url, params) {
