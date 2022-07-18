@@ -45,7 +45,8 @@ namespace API.Controllers
                 LikedUserId = likedUser.Id
             };
 
-            
+            sourceUser.LikedUsers.Add(appUserLike);
+
             if (await _userReposiory.SaveAllAsync()) return Ok();
 
             return BadRequest("Falied to like this user");
@@ -58,5 +59,6 @@ namespace API.Controllers
             var users = await _likesRepository.GetUserLikes(predicate, User.GetUserId());
             return Ok(users);
         }
+        
     }
 }

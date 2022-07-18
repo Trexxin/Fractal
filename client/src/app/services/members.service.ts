@@ -109,4 +109,12 @@ export class MembersService {
       })
     );
   }
+
+  addLike(userName: string) {
+    return this.http.post(this.baseUrl + 'likes/' + userName, {})
+  }
+
+  getLikes(predicate: string) {
+    return this.http.get(this.baseUrl + 'likes?=' + predicate);
+  }
 }
