@@ -9,7 +9,7 @@
 
 
 ## Work In Progress Preview
-To Note: File format is not compatible with all browesers, please user chrome to view the video as github will not allow me to use other formats due to their file size.
+To Note: File format is not compatible with all browesers, please use chrome to view the video as github will not allow me to use other formats due to their file size.
 
 [Fractal_WIP_7-16-2022.webm](https://user-images.githubusercontent.com/52933202/179385049-ffdcb699-3d3e-4a77-a4ff-bee14cf44948.webm)
 
